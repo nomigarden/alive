@@ -24,7 +24,8 @@ export default function CheckinView() {
     }, []);
 
     const handleCheckIn = async () => {
-        const now = new Date().toString();
+        const now = new Date().toISOString();
+
         const ip = null;
         const location = null;
 

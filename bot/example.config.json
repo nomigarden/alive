@@ -1,0 +1,7 @@
+{
+  "bot_token": "PASTE_YOUR_TOKEN_HERE",
+  "my_user_id": 1234123412341234,
+  "alert_user_id": 987654321098765432,
+  "checkin_path": "../backend/checkin_data.json",
+  "username": "boblin the goblin"
+}
