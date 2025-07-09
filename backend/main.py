@@ -24,3 +24,29 @@ def init_checkin_file():
             json.dump({"last_checking": None}, f)
 
 init_checkin_file()
+
+class CheckinRequest(BaseModel):
+    timestamp: str
+    ip: str | None = None
+    location: str | None = None
+    
+@app.get("/last-checkin")
+async def get_last_checkin():
+    with open(CHECKIN_FILE, "r") as f:
+        data = json.load(f)
+    return data
+
+@app.post("/check-in")
+async def post_checkin(payload: CheckinRequest, request: Request):
+    client_ip = payload.ip or request.client.host
+    
+    new_data = {
+        "last_checkin": payload.timestamp,
+        "ip": client_ip,
+        "location": payload.location,
+    }
+    
+    with open(CHECKIN_FILE, "w") as f:
+        json.dump(new_data, f, indent=2)
+        
+    return {"message": "Check.in saved", "data": new_data}
