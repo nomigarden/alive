@@ -63,7 +63,7 @@ export default function CheckinView() {
 
     return (
         <div className="p-6 max-w-md mx-auto bg-zinc-900 text-white rounded-xl shadow-lg space-y-4">
-            <h2>Dead man's switch</h2>
+            <h2>PUSH THE BUTTON!!!1</h2>
 
             {loading ? (
                 <p>Loading...</p>
