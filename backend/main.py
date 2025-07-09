@@ -15,7 +15,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-CHECKIN_FILE = "checking_data.json"
+CHECKIN_FILE = "checkin_data.json"
 
 # if not file, initialize it
 def init_checkin_file():
